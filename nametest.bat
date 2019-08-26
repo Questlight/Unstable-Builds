@@ -3,7 +3,14 @@ title Questlight Name Test
 color 6f
 echo Welcome to the Questlight Random Name Test! This test will attempt to prove that random names are possible in batch!
 pause
+set namecount=1
+set done=not done
+set amount=100
+cd %USERPROFILE%/Desktop/Questlight/
 :namegen
+set /a percent=%namecount%
+cls
+echo Generating names: %percent%/%amount%
 set /a c1num = %RANDOM% * 21 / 32768 + 1
 set /a v1num = %RANDOM% * 5 / 32768 + 1
 set /a c2num = %RANDOM% * 21 / 32768 + 1
@@ -95,8 +102,119 @@ goto :letterizer
 		if "%v3num%" == "3" set v3=i
 		if "%v3num%" == "4" set v3=o
 		if "%v3num%" == "5" set v3=u
-echo %c1%%v1%%c2%%v2%%c3%%v3%
-echo Name#: %c1num%%v1num%%c2num%%v2num%%c3num%%v3num%
-pause
-goto :namegen
+		
+		set name%namecount%=%c1%%v1%%c2%%v2%%c3%%v3%
+		set /a namecount=%namecount% + 1
+		if "%namecount%"=="101" set done=done
+		if "%done%"=="done" goto :save
+		echo %name1%
+		goto namegen
+			:save
+				(
+				echo %name1%
+				echo %name2%
+				echo %name3%
+				echo %name4%
+				echo %name5%
+				echo %name6%
+				echo %name7%
+				echo %name8%
+				echo %name9%
+				echo %name10%
+				echo %name11%
+				echo %name12%
+				echo %name13%
+				echo %name14%
+				echo %name15%
+				echo %name16%
+				echo %name17%
+				echo %name18%
+				echo %name19%
+				echo %name20%
+				echo %name21%
+				echo %name22%
+				echo %name23%
+				echo %name24%
+				echo %name25%
+				echo %name26%
+				echo %name27%
+				echo %name28%
+				echo %name29%
+				echo %name30%
+				echo %name31%
+				echo %name32%
+				echo %name33%
+				echo %name34%
+				echo %name35%
+				echo %name36%
+				echo %name37%
+				echo %name38%
+				echo %name39%
+				echo %name40%
+				echo %name41%
+				echo %name42%
+				echo %name43%
+				echo %name44%
+				echo %name45%
+				echo %name46%
+				echo %name47%
+				echo %name48%
+				echo %name49%
+				echo %name50%
+				echo %name51%
+				echo %name52%
+				echo %name53%
+				echo %name54%
+				echo %name55%
+				echo %name56%
+				echo %name57%
+				echo %name58%
+				echo %name59%
+				echo %name60%
+				echo %name61%
+				echo %name62%
+				echo %name63%
+				echo %name64%
+				echo %name65%
+				echo %name66%
+				echo %name67%
+				echo %name68%
+				echo %name69%
+				echo %name70%
+				echo %name71%
+				echo %name72%
+				echo %name73%
+				echo %name74%
+				echo %name75%
+				echo %name76%
+				echo %name77%
+				echo %name78%
+				echo %name79%
+				echo %name80%
+				echo %name81%
+				echo %name82%
+				echo %name83%
+				echo %name84%
+				echo %name85%
+				echo %name86%
+				echo %name87%
+				echo %name88%
+				echo %name89%
+				echo %name90%
+				echo %name91%
+				echo %name92%
+				echo %name93%
+				echo %name94%
+				echo %name95%
+				echo %name96%
+				echo %name97%
+				echo %name98%
+				echo %name99%
+				echo %name100%
+				) > saves/names.txt
+				echo 100 names have been generated!
+				pause
+				endlocal
+
+goto namegen
 		
